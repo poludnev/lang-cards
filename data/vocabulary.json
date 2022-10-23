@@ -1,0 +1,962 @@
+[
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ağaç",
+    "word2": "tree",
+    "word3": "дерево"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "anne",
+    "word2": "mother",
+    "word3": "мать"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "araba",
+    "word2": "car",
+    "word3": "машина"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "askı",
+    "word2": "hanger",
+    "word3": "вешалка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ayakkabı",
+    "word2": "shoe",
+    "word3": "ботинок"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "baba",
+    "word2": "father",
+    "word3": "отец"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "bardak",
+    "word2": "glass (cup)",
+    "word3": "стакан"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "başlangiç",
+    "word2": "beginning",
+    "word3": "начало"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "bavul",
+    "word2": "suitcase",
+    "word3": "чемодан"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "bayrak",
+    "word2": "flag",
+    "word3": "флаг"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "bebek",
+    "word2": "baby",
+    "word3": "малыш"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "bilgisayar",
+    "word2": "computer",
+    "word3": "компьютер"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "cam",
+    "word2": "glass (window)",
+    "word3": "стекло"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "cami",
+    "word2": "mosque",
+    "word3": "мечеть"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "çanta",
+    "word2": "bag",
+    "word3": "сумка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "çikolata",
+    "word2": "chocolate",
+    "word3": "шоколад"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "civciv",
+    "word2": "chick",
+    "word3": "цыпленок"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "çocuk",
+    "word2": "child",
+    "word3": "ребенок"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "çorap",
+    "word2": "sock",
+    "word3": "носок"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "çorba",
+    "word2": "soup",
+    "word3": "суп"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "cüzdan",
+    "word2": "purse/wallet",
+    "word3": "кошелек"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "dağ",
+    "word2": "mountain",
+    "word3": "гора"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "doktor",
+    "word2": "doctor",
+    "word3": "доктор"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "dolap",
+    "word2": "cabinet",
+    "word3": "шкаф"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "domates",
+    "word2": "tomato",
+    "word3": "помидор"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "dondurma",
+    "word2": "ice cream",
+    "word3": "мороженое"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ekmek",
+    "word2": "bread",
+    "word3": "хлеб"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "eldiven",
+    "word2": "glove",
+    "word3": "перчатка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "elma",
+    "word2": "apple",
+    "word3": "яблоко"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "eşek",
+    "word2": "donkey",
+    "word3": "осел"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "fare",
+    "word2": "mouse",
+    "word3": "мышь"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "fil",
+    "word2": "elephant",
+    "word3": "слон"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "fıncan",
+    "word2": "cup",
+    "word3": "чашка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "fındık",
+    "word2": "hazelnut",
+    "word3": "фундук"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "gemi",
+    "word2": "boat",
+    "word3": "лодка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "göz",
+    "word2": "eye",
+    "word3": "глаз"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "gözlük",
+    "word2": "eye-glasses",
+    "word3": "очки"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "güneş",
+    "word2": "sun",
+    "word3": "солнце"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "halı",
+    "word2": "carpet",
+    "word3": "ковер"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "harf",
+    "word2": "letter",
+    "word3": "буква"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "hastane",
+    "word2": "hospital",
+    "word3": "больница"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "havuç",
+    "word2": "carrot",
+    "word3": "морковь"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "hekim",
+    "word2": "physician",
+    "word3": "доктор (врач)"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "hemşire",
+    "word2": "nurse",
+    "word3": "медсестра"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "horoz",
+    "word2": "rooster",
+    "word3": "петух"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "iğne",
+    "word2": "needle",
+    "word3": "игла"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ince",
+    "word2": "thin",
+    "word3": "тонкий"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "inci",
+    "word2": "pearl",
+    "word3": "жемчужина"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "inek",
+    "word2": "cow",
+    "word3": "корова"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "insan",
+    "word2": "human",
+    "word3": "человек"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ip",
+    "word2": "rope",
+    "word3": "веревка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ıhlamur",
+    "word2": "linden",
+    "word3": "липа"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ırmak",
+    "word2": "river",
+    "word3": "река"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ışık",
+    "word2": "light",
+    "word3": "свет"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ıspanak",
+    "word2": "spinach",
+    "word3": "шпинат"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "jaguar",
+    "word2": "jaguar",
+    "word3": "ягуар"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "jandarma",
+    "word2": "gendarme",
+    "word3": "жандармерия"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "jet ",
+    "word2": "jet (airplane)",
+    "word3": "реактивный самолет"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "jeton",
+    "word2": "token",
+    "word3": "жетон"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "kalem",
+    "word2": "pen",
+    "word3": "ручка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "kalın",
+    "word2": "thick",
+    "word3": "толстый"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "kanguru",
+    "word2": "kangaroo",
+    "word3": "кенгуру"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "kedi",
+    "word2": "cat",
+    "word3": "кошка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "kitap",
+    "word2": "book",
+    "word3": "книга"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "köpek",
+    "word2": "dog",
+    "word3": "собака"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "lamba",
+    "word2": "lamp",
+    "word3": "лампа"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "leylek",
+    "word2": "stork",
+    "word3": "аист"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "limon",
+    "word2": "lemon",
+    "word3": "лимон"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "lokanta",
+    "word2": "restaurant",
+    "word3": "ресторан"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "lokum",
+    "word2": "turkish delight",
+    "word3": "лукум"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "makas",
+    "word2": "scissors",
+    "word3": "ножницы"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "market",
+    "word2": "shop",
+    "word3": "магазин"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "maymun",
+    "word2": "monkey",
+    "word3": "обезьяна"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "merdiven",
+    "word2": "ladder / stairs",
+    "word3": "лестница"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "nane",
+    "word2": "mint",
+    "word3": "мята"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "nar",
+    "word2": "pomegranate",
+    "word3": "гранат"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "nine",
+    "word2": "grandma",
+    "word3": "бабушка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "öğrenci",
+    "word2": "student",
+    "word3": "ученик"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "öğretmen",
+    "word2": "teacher",
+    "word3": "учитель"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "okul",
+    "word2": "school",
+    "word3": "школа"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ördek",
+    "word2": "duck",
+    "word3": "утка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "orman",
+    "word2": "forest",
+    "word3": "лес"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "otobüs",
+    "word2": "bus",
+    "word3": "автобус"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "pamuk",
+    "word2": "cotton",
+    "word3": "хлопок"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "para",
+    "word2": "money",
+    "word3": "деньги"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "pencere",
+    "word2": "window",
+    "word3": "окно"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "polis",
+    "word2": "police",
+    "word3": "полиция"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "radio",
+    "word2": "radio",
+    "word3": "радио"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "raf",
+    "word2": "shelf",
+    "word3": "полка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "raket",
+    "word2": "racquet; bat",
+    "word3": "ракетка (бита)"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "resim",
+    "word2": "picture",
+    "word3": "картина"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "saat",
+    "word2": "hour",
+    "word3": " "
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "salıncak",
+    "word2": "swing",
+    "word3": "качели"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "salyangoz",
+    "word2": "snail",
+    "word3": "улитка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "şeker",
+    "word2": "sugar",
+    "word3": "сахар"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "şemsiye",
+    "word2": "umbrella",
+    "word3": "зонтик"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "sesli",
+    "word2": "audible (vowel)",
+    "word3": "звучащий (гласный)"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "sessiz",
+    "word2": "quiet (consonant)",
+    "word3": "не звучащий (согласный)"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "silgi",
+    "word2": "eraser",
+    "word3": "стирательная резинка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "şışe",
+    "word2": "bottle",
+    "word3": "бутылка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "taksi",
+    "word2": "taxi",
+    "word3": "такси"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "terlik",
+    "word2": "slipper",
+    "word3": "тапок"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "tilki",
+    "word2": "fox",
+    "word3": "лиса"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "top",
+    "word2": "ball",
+    "word3": "мяч"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "uçak",
+    "word2": "airplane",
+    "word3": "самолет"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "uçurtma",
+    "word2": "kite",
+    "word3": "воздушный змей"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ünlü",
+    "word2": "vowel",
+    "word3": "гласный"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ünsüz",
+    "word2": "consonant",
+    "word3": "согласный"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "ütü",
+    "word2": "iron",
+    "word3": "утюг"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "üzüm",
+    "word2": "grape",
+    "word3": "виноград"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "valiz",
+    "word2": "suitcase",
+    "word3": "чемодан"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "vazo",
+    "word2": "vase",
+    "word3": "ваза"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "vida",
+    "word2": "screw",
+    "word3": "винт"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "yilan",
+    "word2": "snake",
+    "word3": "змея"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "yuğurt",
+    "word2": "yogurt",
+    "word3": "йогурт"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "yumurta",
+    "word2": "egg",
+    "word3": "яйцо"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "yumuşak",
+    "word2": "soft",
+    "word3": "мягкий"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "zebra",
+    "word2": "zebra",
+    "word3": "зебра"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "zeytin",
+    "word2": "olive",
+    "word3": "оливка"
+  },
+  {
+    "lang1": "Turk",
+    "lang2": "English",
+    "lang3": "Russian",
+    "word1": "zürafa",
+    "word2": "giraffe",
+    "word3": "жираф"
+  }
+]

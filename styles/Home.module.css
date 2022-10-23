@@ -1,18 +1,20 @@
 .container {
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
+  /* background-color: aqua; */
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 1rem;
   flex: 1;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
+  background-color: bisque;
 }
 
-.footer {
+/* .footer {
   display: flex;
   flex: 1;
   padding: 2rem 0;
@@ -113,9 +115,9 @@
     width: 100%;
     flex-direction: column;
   }
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .card,
   .footer {
     border-color: #222;
@@ -126,4 +128,4 @@
   .logo img {
     filter: invert(1);
   }
-}
+} */
