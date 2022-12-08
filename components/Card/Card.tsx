@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction, useState } from 'react';
-
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useMainContext } from 'contexts';
 import { ICardProps } from './CardProps';
 import styles from './Card.module.scss';
 export const Card: React.FC<ICardProps> = ({
@@ -13,26 +13,48 @@ export const Card: React.FC<ICardProps> = ({
   onClickNext,
   onClickPrevious,
 }) => {
-  const [isShowWord1, setShowWord1] = useState<boolean>(true);
-  const [isShowWord2, setShowWord2] = useState<boolean>(false);
-  const [isShowWord3, setShowWord3] = useState<boolean>(false);
+  const { mainLang } = useMainContext();
+
+  console.log(
+    'mainLang',
+    mainLang,
+    mainLang === 'turk',
+    mainLang === 'eng',
+    mainLang === 'ru',
+  );
+
+  const [isShowWord1, setShowWord1] = useState<boolean>(mainLang === 'turk');
+  const [isShowWord2, setShowWord2] = useState<boolean>(mainLang === 'eng');
+  const [isShowWord3, setShowWord3] = useState<boolean>(mainLang === 'ru');
 
   const showWordHandler = (setShow: Dispatch<SetStateAction<boolean>>) => () => setShow(true);
   const clickPreviousHandler = () => {
     onClickPrevious();
-    setShowWord2(false);
-    setShowWord3(false);
+    setShowWord1(mainLang === 'turk');
+    setShowWord2(mainLang === 'eng');
+    setShowWord3(mainLang === 'ru');
   };
   const clickCheckHandler = () => {
     onClickCheck();
-    setShowWord2(false);
-    setShowWord3(false);
+    setShowWord1(mainLang === 'turk');
+    setShowWord2(mainLang === 'eng');
+    setShowWord3(mainLang === 'ru');
   };
   const clickNextHandler = () => {
     onClickNext();
-    setShowWord2(false);
-    setShowWord3(false);
+    setShowWord1(mainLang === 'turk');
+    setShowWord2(mainLang === 'eng');
+    setShowWord3(mainLang === 'ru');
   };
+
+  useEffect(() => {
+    console.log('useEffect', mainLang);
+    setShowWord1(mainLang === 'turk');
+    setShowWord2(mainLang === 'eng');
+    setShowWord3(mainLang === 'ru');
+  }, [mainLang]);
+
+  console.log(mainLang, isShowWord1, isShowWord2, isShowWord3);
 
   return (
     <div className={styles.container}>

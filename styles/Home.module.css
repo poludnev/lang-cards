@@ -8,12 +8,24 @@
   padding: 1rem;
   flex: 1;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: bisque;
 }
 
+.main * {
+  flex: 0 0;
+}
+
+.select {
+  margin: 2rem;
+}
+
+.select button {
+  padding: 2rem;
+  border-radius: 10px;
+}
 /* .footer {
   display: flex;
   flex: 1;
