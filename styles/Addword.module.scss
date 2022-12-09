@@ -1,0 +1,61 @@
+.container {
+  background-color: rgb(207, 241, 255);
+  min-height: 100vh;
+  padding: 5rem;
+}
+
+.adder {
+}
+
+.form {
+  &__input_group {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__input,
+  &__lable {
+    display: block;
+  }
+
+  &__input {
+    flex: 1 0;
+    height: 4rem;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+
+  &__label {
+    flex: 0 0 15rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.feedback {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem 1rem;
+  &__item {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__item_element {
+    flex: 0 0 30%;
+  }
+}

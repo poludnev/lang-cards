@@ -1,7 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 // import { getAnalytics } from 'firebase/analytics';
-import { arrayUnion, doc, getDoc, getFirestore, updateDoc } from 'firebase/firestore';
+import {
+  arrayUnion,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  query,
+  setDoc,
+  updateDoc,
+  where,
+} from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -35,6 +46,24 @@ export const getDocument = async (
   }
 };
 
+export const getDatabyFieldValue = async (
+  collectionName: string,
+  fieldName: string,
+  fieldValue: string,
+) => {
+  const q = query(collection(db, collectionName), where(fieldName, '==', fieldValue));
+
+  const querySnapshot = await getDocs(q);
+  const result = {};
+
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    // console.log(doc.id, ' => ', doc.data());
+    result[doc.id] = doc.data();
+  });
+  return result;
+};
+
 export const updateDocument = async (
   collectionName: string,
   documentId: string,
@@ -46,4 +75,13 @@ export const updateDocument = async (
   await updateDoc(docRef, {
     [fieldName]: arrayUnion(data),
   });
+};
+
+export const addDocumentById = async (
+  collectionName: string,
+  documentId: string,
+  data: any,
+) => {
+  const docRef = doc(db, collectionName, documentId);
+  await setDoc(docRef, data);
 };
