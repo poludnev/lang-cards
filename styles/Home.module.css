@@ -1,6 +1,4 @@
 .container {
-  /* padding: 0 2rem; */
-  /* background-color: aqua; */
 }
 
 .main {
@@ -12,6 +10,13 @@
   justify-content: center;
   align-items: center;
   background-color: bisque;
+
+}
+@media only screen and (max-width: 23.5em) {
+  .main {
+    justify-content: start;
+
+  }
 }
 
 .main * {

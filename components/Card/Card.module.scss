@@ -7,6 +7,11 @@
   border-radius: 1.2rem;
   padding: 1rem;
 
+
+  @media only screen and (max-width: 23.5em) {
+    width: 100%;
+  }
+
   button {
     background-color: #fff;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -48,7 +53,7 @@
     }
 
     .value {
-      font-size: 3.2rem;
+      font-size: 2rem;
       padding-left: 3rem;
       line-height: 3.2rem;
       // display: flex;
