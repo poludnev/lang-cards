@@ -1,0 +1,27 @@
+.container {
+  background-color: white;
+  .wordlist {
+    width: 100rem;
+    margin: auto;
+    border: 1px solid black;
+    &__item {
+      display: flex;
+    }
+
+    &__item__controls {
+      display: flex;
+      flex: 0 0 10rem;
+
+      & > * {
+        height: 100%;
+        width: 33.3333%;
+      }
+    }
+    &__item__elements {
+      flex: 1 0;
+      font-size: 1.8rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid black;
+    }
+  }
+}

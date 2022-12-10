@@ -3,9 +3,9 @@
 const fs = require('fs/promises');
 
 const read = () => {
-  fs.readFile('./data/words1.csv', { encoding: 'utf-8' }).then((data) => {
+  fs.readFile('./data/words2.tsv', { encoding: 'utf-8' }).then((data) => {
     const processedData = data.split('\r\n').map((el) => {
-      const words = el.split(',');
+      const words = el.split('\t');
       if (words.length > 3) console.error('alert!');
       return {
         lang1: 'Turk',
@@ -16,8 +16,17 @@ const read = () => {
         word3: words[2],
       };
     });
-    console.log(processedData);
-    fs.writeFile('./data/vocabulary.json', JSON.stringify(processedData));
+    const processedData2 = data.split('\r\n').map((el) => {
+      const words = el.split('\t');
+      if (words.length > 3) console.error('alert!');
+      return {
+        tur: words[0].length === 0 ? 'n/a' : words[0],
+        eng: words[1].length === 0 ? 'n/a' : words[1],
+        rus: words[2].length === 0 ? 'n/a' : words[2],
+      };
+    });
+    console.log(processedData2);
+    fs.writeFile('./data/vocabulary2.json', JSON.stringify(processedData2));
   });
 };
 

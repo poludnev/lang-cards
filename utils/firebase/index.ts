@@ -1,6 +1,4 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-// import { getAnalytics } from 'firebase/analytics';
 import {
   arrayUnion,
   collection,
@@ -13,11 +11,7 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyCoU6CCiA7Ndoq5x3g3E8z13QyVFNeFb5U',
   authDomain: 'languages-3fb2e.firebaseapp.com',
@@ -28,9 +22,8 @@ const firebaseConfig = {
   measurementId: 'G-QSPR6HB358',
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 
 const db = getFirestore(app);
 
@@ -46,6 +39,16 @@ export const getDocument = async (
   }
 };
 
+export const getAllDocuments = async (collectionName: string) => {
+  const querySnapshot = await getDocs(collection(db, collectionName));
+  const result = {};
+
+  querySnapshot.forEach((doc) => {
+    result[doc.id] = doc.data();
+  });
+  return result;
+};
+
 export const getDatabyFieldValue = async (
   collectionName: string,
   fieldName: string,
@@ -57,8 +60,6 @@ export const getDatabyFieldValue = async (
   const result = {};
 
   querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    // console.log(doc.id, ' => ', doc.data());
     result[doc.id] = doc.data();
   });
   return result;
@@ -67,14 +68,11 @@ export const getDatabyFieldValue = async (
 export const updateDocument = async (
   collectionName: string,
   documentId: string,
-  fieldName: string,
   data: any,
 ) => {
   const docRef = doc(db, collectionName, documentId);
 
-  await updateDoc(docRef, {
-    [fieldName]: arrayUnion(data),
-  });
+  await updateDoc(docRef, data);
 };
 
 export const addDocumentById = async (
