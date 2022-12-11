@@ -33,9 +33,15 @@ export const WordsListElement: React.FC<IWordsListElementProps> = ({
     <div className={styles.container}>
       <div className={cn(styles.item, isEditing ? styles.editing : null)}>
         <div className={styles.item__controls}>
-          <button onClick={() => setIsEditing(true)}>e</button>
-          <button onClick={() => setIsEditing(false)}>x</button>
-          <button onClick={confirmEditingHandler}>c</button>
+          <button onClick={() => setIsEditing(true)} disabled={!onEdit}>
+            e
+          </button>
+          <button onClick={() => setIsEditing(false)} disabled={!onEdit}>
+            x
+          </button>
+          <button onClick={confirmEditingHandler} disabled={!onEdit}>
+            c
+          </button>
         </div>
         <div className={styles.item__elements}>
           {!isEditing && <div className={styles.item__element}>{tur}</div>}

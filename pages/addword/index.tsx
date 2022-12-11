@@ -1,4 +1,4 @@
-import { Button, WordsList } from 'components';
+import { Button, SearchFilter, WordsList } from 'components';
 import { useEffect, useState } from 'react';
 import styles from 'styles/Addword.module.scss';
 import {
@@ -9,14 +9,21 @@ import {
   updateDocument,
 } from 'utils/firebase';
 
-import vocab from 'data/vocabulary2.json';
+import { TFilterState, TLang } from 'types';
 
 const AddNewWordPage = () => {
   const [feedback, setFeedback] = useState<{ [id: string]: any } | null>(null);
   const [wordsList, setWordsList] = useState<{
     allIDs: string[];
-    byId: { [id: string]: any };
+    byId: { [id: string]: { [key in TLang]: string } };
   } | null>(null);
+  const [filteredWordsList, setFilteredWordsList] = useState<{
+    allIDs: string[];
+    byId: { [id: string]: { [key in TLang]: string } };
+  } | null>(null);
+
+  const initialFilterState: TFilterState = { tur: null, eng: null, rus: null };
+  const [filterState, setFilterState] = useState<TFilterState>(initialFilterState);
 
   const vocabularyCollection = 'testVocad';
 
@@ -63,17 +70,35 @@ const AddNewWordPage = () => {
     });
   }, []);
 
-  const add = () => {
-    const a = Promise.all(
-      vocab.map((word) =>
-        addDocumentById('testVocad', word.tur.split(' ').join('-') + '-' + Date.now(), word),
-      ),
-    );
-    a.then((res) => console.log('res', res));
-  };
+  useEffect(() => {
+    console.log('filterState', filterState);
+    if (!wordsList) return;
+
+    const { byId } = wordsList;
+
+    const filtered = wordsList.allIDs.reduce<string[]>((acc, val) => {
+      if (!!filterState.tur) {
+        const tur = byId[val].tur.toLowerCase();
+        return !tur.match(filterState.tur) ? acc : [...acc, val];
+      }
+
+      if (!!filterState.eng) {
+        const eng = byId[val].eng.toLowerCase();
+        return !eng.match(filterState.eng) ? acc : [...acc, val];
+      }
+      if (!!filterState.rus) {
+        const rus = byId[val].rus.toLowerCase();
+        return !rus.match(filterState.rus) ? acc : [...acc, val];
+      }
+
+      return acc;
+    }, []);
+    console.log('filtered', filtered);
+    setFilteredWordsList({ allIDs: filtered, byId: wordsList.byId });
+  }, [filterState, wordsList]);
+
   return (
     <div className={styles.container}>
-      <button onClick={add}>ADD</button>
       <div className={styles.adder}>
         <form onSubmit={submitFormHandler} className={styles.form}>
           <div className={styles.form__input_group}>
@@ -99,6 +124,11 @@ const AddNewWordPage = () => {
           </div>
         </form>
       </div>
+      <SearchFilter
+        initialFilterState={initialFilterState}
+        filterState={filterState}
+        setFilterState={setFilterState}
+      />
       <div className={styles.feedback}>
         {feedback &&
           Object.keys(feedback).map((id) => (
@@ -109,6 +139,11 @@ const AddNewWordPage = () => {
             </div>
           ))}
       </div>
+      {!!filteredWordsList && filteredWordsList.allIDs.length > 0 && (
+        <div className={styles.filtered}>
+          <WordsList wordsList={filteredWordsList} />
+        </div>
+      )}
       <WordsList wordsList={wordsList} onEdit={updateVocabElementHandler} />
     </div>
   );
