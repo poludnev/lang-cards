@@ -1,4 +1,3 @@
-import vocab from 'data/vocabulary3.json';
 import { useEffect, useState } from 'react';
 import { addDocumentById, getAllDocuments } from 'utils/firebase';
 import { api as apiRoute } from 'routes';
