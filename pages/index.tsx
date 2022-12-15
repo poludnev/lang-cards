@@ -5,7 +5,6 @@ import { Card } from 'components';
 import { useMainContext } from 'contexts';
 import styles from '../styles/Home.module.css';
 
-
 import { TLang, TVocabulary, TWordSet } from 'types';
 import { NextPage } from 'next';
 import { api as apiRoute } from 'routes';
@@ -42,6 +41,7 @@ const Home: NextPage<ICardsProps> = () => {
     fetch(apiRoute.words())
       .then((res) => res.json())
       .then((vocabulary: TVocabulary) => {
+        console.log('vocabulary');
         setWordsList(vocabulary);
       })
       .catch((error) => {
@@ -108,12 +108,12 @@ const Home: NextPage<ICardsProps> = () => {
 };
 
 export default Home;
-export const getStaticProps = async () => {
-  const vocabularyData = await fs.readFile('data/vocabulary2.json', 'utf-8');
-  const parsedVocabulary = JSON.parse(vocabularyData);
-  return {
-    props: {
-      vocabulary: parsedVocabulary,
-    },
-  };
-};
+// export const getStaticProps = async () => {
+//   const vocabularyData = await fs.readFile('data/vocabulary2.json', 'utf-8');
+//   const parsedVocabulary = JSON.parse(vocabularyData);
+//   return {
+//     props: {
+//       vocabulary: parsedVocabulary,
+//     },
+//   };
+// };
