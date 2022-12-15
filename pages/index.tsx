@@ -41,7 +41,7 @@ const Home: NextPage<ICardsProps> = () => {
     fetch(apiRoute.words())
       .then((res) => res.json())
       .then((vocabulary: TVocabulary) => {
-        console.log('vocabulary');
+        console.log('vocabulary', vocabulary);
         setWordsList(vocabulary);
       })
       .catch((error) => {
