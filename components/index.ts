@@ -1,1 +1,2 @@
-export { Card } from 'components/Card';
+export * from 'components/Card';
+export * from 'components/shared';

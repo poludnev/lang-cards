@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { Card } from 'components';
 import { useMainContext } from 'contexts';
+import { getDocument, updateDocument } from 'utils/firebase';
 import styles from '../styles/Home.module.css';
 
 import wordSets from 'data/vocabulary.json';
@@ -22,6 +23,23 @@ export default function Home() {
     setCurrentCarnNumber(currentCardNumber - 1);
   };
 
+  const vocabularyCollection = 'testVocabulary';
+  const vocabularyCollectionDocument = 'vocabulary';
+  const wordsFieldName = 'words';
+
+  getDocument(vocabularyCollection, vocabularyCollectionDocument);
+
+  const dataToAdd = {
+    tur: 'alkol',
+    eng: 'alcohol',
+    rus: 'алкоголь',
+  };
+  // updateDocument(
+  //   vocabularyCollection,
+  //   vocabularyCollectionDocument,
+  //   wordsFieldName,
+  //   dataToAdd,
+  // );
   return (
     <div className={styles.container}>
       <Head>
