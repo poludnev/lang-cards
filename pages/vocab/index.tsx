@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from 'styles/Addword.module.scss';
 
 import { api as apiRoute } from 'routes';
-
+import { getVocabulary, updateVocabulary } from 'utils/helpers';
 import { TFilterState, TVocabulary, TVocabularyById } from 'types';
 import { NextPage } from 'next';
 
@@ -28,37 +28,34 @@ const VocabularyListPage: NextPage<IVocabularyListPageProps> = ({ vocabulary }) 
     if (rus.value.length + tur.value.length + eng.value.length === 0) return;
     //TODO: handle empty forms
 
-    try {
-      const data = {
-        rus: rus.value.length === 0 ? 'n/a' : rus.value,
-        tur: tur.value.length === 0 ? 'n/a' : tur.value,
-        eng: eng.value.length === 0 ? 'n/a' : eng.value,
-      };
-      const newWordID = data.tur + '-' + Date.now();
+    // try {
+    const data = {
+      rus: rus.value.length === 0 ? 'n/a' : rus.value,
+      tur: tur.value.length === 0 ? 'n/a' : tur.value,
+      eng: eng.value.length === 0 ? 'n/a' : eng.value,
+    };
+    const newWordID = data.tur + '-' + Date.now();
 
-      const byId = wordsList.byId;
-      const allIDs = wordsList.allIDs;
+    const byId = wordsList.byId;
+    const allIDs = wordsList.allIDs;
 
-      allIDs.push(newWordID);
-      byId[newWordID] = data;
-      const updatedWordsList: TVocabulary = {
-        allIDs: allIDs.sort((a, b) => a.localeCompare(b)),
-        byId,
-      };
-      fetch(apiRoute.words(), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updatedWordsList),
-      }).then(() => {
+    allIDs.push(newWordID);
+    byId[newWordID] = data;
+    const updatedWordsList: TVocabulary = {
+      allIDs: allIDs.sort((a, b) => a.localeCompare(b)),
+      byId,
+    };
+    updateVocabulary(updatedWordsList)
+      .then(() => {
         setFeedback({ [newWordID]: data });
         setWordsList(updatedWordsList);
         rus.value = '';
         tur.value = '';
         eng.value = '';
+      })
+      .catch((error) => {
+        console.error('Handling form submit error: ' + JSON.stringify(error));
       });
-    } catch (error) {
-      console.error('Handling form submit error: ' + JSON.stringify(error));
-    }
   };
 
   const updateVocabElementHandler = async (
@@ -66,38 +63,49 @@ const VocabularyListPage: NextPage<IVocabularyListPageProps> = ({ vocabulary }) 
     data: { tur: string; eng: string; rus: string },
   ) => {
     const newWordID = data.tur + '-' + Date.now();
-    try {
-      const allIDs = wordsList.allIDs.filter((el) => el !== id);
-      const byId = wordsList.byId;
-      byId[newWordID] = data;
-      delete byId[id];
-      allIDs.push(newWordID);
+    // try {
+    const allIDs = wordsList.allIDs.filter((el) => el !== id);
+    const byId = wordsList.byId;
+    byId[newWordID] = data;
+    delete byId[id];
+    allIDs.push(newWordID);
 
-      fetch(apiRoute.words(), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ allIDs, byId }),
-      }).then(() => {
-        setWordsList((prev) => ({ ...prev, byId: { ...prev.byId, [id]: data } }));
+    const updatedWordsList: TVocabulary = {
+      allIDs: allIDs.sort((a, b) => a.localeCompare(b)),
+      byId,
+    };
+
+    updateVocabulary(updatedWordsList)
+      .then(() => {
+        setWordsList(updatedWordsList);
+        
+      })
+      .catch((error) => {
+        console.error('Handling form submit error: ' + JSON.stringify(error));
       });
-    } catch (error) {
-      console.error(`Error while updating id: ${id} widh data: ${JSON.stringify(data)}`);
-      return false;
-    }
+
+    // fetch(apiRoute.words(), {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ allIDs, byId }),
+    // }).then(() => {
+    //   setWordsList((prev) => ({ ...prev, byId: { ...prev.byId, [id]: data } }));
+    // });
+    // } catch (error) {
+    //   console.error(`Error while updating id: ${id} widh data: ${JSON.stringify(data)}`);
+    //   return false;
+    // }
   };
 
   useEffect(() => {
-    fetch(apiRoute.words())
-      .then((res) => res.json())
-      .then((vocabulary: TVocabulary) => {
-        // const words = JSON.parse(data);
+    getVocabulary()
+      .then((vocabulary) => {
+        console.log('vocabulary', vocabulary);
         setWordsList(vocabulary);
       })
       .catch((error) => {
         console.error('Error when fetching words: ' + error);
-        setWordsList(null);
       });
-    // });
   }, []);
 
   useEffect(() => {

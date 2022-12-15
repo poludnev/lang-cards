@@ -22,7 +22,6 @@ const firebaseConfig = {
   measurementId: 'G-QSPR6HB358',
 };
 
-
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
@@ -36,6 +35,7 @@ export const getDocument = async (
 
   if (docSnap.exists()) {
     console.log('doc', docSnap.data());
+    return docSnap.data();
   }
 };
 

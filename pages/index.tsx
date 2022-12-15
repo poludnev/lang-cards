@@ -4,7 +4,7 @@ import fs from 'fs/promises';
 import { Card } from 'components';
 import { useMainContext } from 'contexts';
 import styles from '../styles/Home.module.css';
-
+import { getVocabulary } from 'utils/helpers';
 import { TLang, TVocabulary, TWordSet } from 'types';
 import { NextPage } from 'next';
 import { api as apiRoute } from 'routes';
@@ -38,16 +38,25 @@ const Home: NextPage<ICardsProps> = () => {
   };
 
   useEffect(() => {
-    fetch(apiRoute.words())
-      .then((res) => res.json())
-      .then((vocabulary: TVocabulary) => {
+    getVocabulary()
+      .then((vocabulary) => {
         console.log('vocabulary', vocabulary);
         setWordsList(vocabulary);
       })
       .catch((error) => {
         console.error('Error when fetching words: ' + error);
-        setWordsList(null);
       });
+    //     setWordsList(null);})
+    // fetch(apiRoute.words())
+    //   .then((res) => res.json())
+    //   .then((vocabulary: TVocabulary) => {
+    //     console.log('vocabulary', vocabulary);
+    //     setWordsList(vocabulary);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error when fetching words: ' + error);
+    //     setWordsList(null);
+    //   });
   }, []);
 
   useEffect(() => {
