@@ -7,7 +7,6 @@
   border-radius: 1.2rem;
   padding: 1rem;
 
-
   @media only screen and (max-width: 23.5em) {
     width: 100%;
   }
@@ -68,6 +67,62 @@
       line-height: 3.2rem;
       color: #74c0fc;
       cursor: pointer;
+    }
+  }
+
+  .randomwords {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // justify-items: center;
+    padding: 1rem;
+
+    &__langswitch {
+      font-size: 1.5rem;
+      justify-items: center;
+      text-align: center;
+      padding: 1rem;
+      cursor: pointer;
+
+      &:first-child {
+        justify-self: end;
+      }
+      &:not(:first-child) {
+        justify-self: start;
+      }
+
+      &__selected {
+        background-color: #e0f2ff;
+      }
+
+      &__disabled {
+        background-color: lightgray;
+        cursor: not-allowed;
+      }
+    }
+
+    &__item {
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      justify-items: stretch;
+      text-align: center;
+      color: black;
+    }
+
+    &__item:hover {
+      background-color: aliceblue;
+      color: black;
+    }
+    &__item:active {
+      background-color: rgb(207, 232, 254);
+    }
+    &__item_clicked {
+      background-color: coral !important;
+      color: white;
+    }
+    &__item_correct {
+      background-color: lightgreen !important;
+      color: black;
     }
   }
   .cardFooter {

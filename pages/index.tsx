@@ -1,20 +1,35 @@
 import Head from 'next/head';
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import fs from 'fs/promises';
 import { Card } from 'components';
 import { useMainContext } from 'contexts';
-import { getDocument, updateDocument } from 'utils/firebase';
 import styles from '../styles/Home.module.css';
 
-import wordSets from 'data/vocabulary.json';
 
-export default function Home() {
+import { TLang, TVocabulary, TWordSet } from 'types';
+import { NextPage } from 'next';
+import { api as apiRoute } from 'routes';
+import { getRandomInt, getRandomUniqIntArray } from 'utils/randoms';
+
+interface ICardsProps {
+  vocabulary: {
+    allIDs: string[];
+    byId: { [id: string]: { [key in TLang]: string } };
+  };
+}
+
+// export default function
+const Home: NextPage<ICardsProps> = () => {
   const [currentCardNumber, setCurrentCarnNumber] = useState<number>(0);
+  const [currentCardId, setCurrentCardId] = useState<string | null>(null);
+  const [wordsList, setWordsList] = useState<TVocabulary | null>(null);
+  const [randomWorsdIds, setRandomWordsIds] = useState<string[]>([]);
+  const [randomWords, setRandomWords] = useState<TWordSet[]>([]);
 
   const { mainLang, setMainLang } = useMainContext();
   const onClickNext = () => {
     const nextCardNumber = currentCardNumber + 1;
-    if (nextCardNumber >= wordSets.length) return;
+    if (nextCardNumber >= wordsList.allIDs.length) return;
     setCurrentCarnNumber(currentCardNumber + 1);
   };
   const onClickCheck = () => console.log('check');
@@ -23,23 +38,45 @@ export default function Home() {
     setCurrentCarnNumber(currentCardNumber - 1);
   };
 
-  const vocabularyCollection = 'testVocabulary';
-  const vocabularyCollectionDocument = 'vocabulary';
-  const wordsFieldName = 'words';
+  useEffect(() => {
+    fetch(apiRoute.words())
+      .then((res) => res.json())
+      .then((vocabulary: TVocabulary) => {
+        setWordsList(vocabulary);
+      })
+      .catch((error) => {
+        console.error('Error when fetching words: ' + error);
+        setWordsList(null);
+      });
+  }, []);
 
-  getDocument(vocabularyCollection, vocabularyCollectionDocument);
+  useEffect(() => {
+    if (!wordsList) return;
+    const ids = wordsList.allIDs;
+    setCurrentCardId(ids[currentCardNumber]);
+  }, [wordsList, currentCardNumber]);
 
-  const dataToAdd = {
-    tur: 'alkol',
-    eng: 'alcohol',
-    rus: 'алкоголь',
-  };
-  // updateDocument(
-  //   vocabularyCollection,
-  //   vocabularyCollectionDocument,
-  //   wordsFieldName,
-  //   dataToAdd,
-  // );
+  useEffect(() => {
+    if (!wordsList) return;
+    const randomIds = getRandomUniqIntArray(0, wordsList.allIDs.length - 1, 4).map((index) => {
+      // console.log(index);
+      return wordsList.allIDs[index];
+    });
+    console.log('randomIds1', randomIds);
+    if (!!currentCardId && !randomIds.includes(currentCardId)) {
+      const randI = getRandomInt(0, 3);
+      // console.log(randI, currentCardId);
+      randomIds[randI] = currentCardId;
+    }
+    // console.log('randomIds2', randomIds);
+    const randomWords = randomIds.map((id) => wordsList.byId[id]);
+    // console.log(randomwords);
+    // setRandomWordsIds(randomIds);
+    setRandomWords(randomWords);
+  }, [wordsList, currentCardId]);
+
+  // console.log('currentCardId', currentCardId);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -55,13 +92,28 @@ export default function Home() {
           <button onClick={() => setMainLang('eng')}>ENG</button>
           <button onClick={() => setMainLang('ru')}>RUS</button>
         </div>
-        <Card
-          {...wordSets[currentCardNumber]}
-          onClickCheck={onClickCheck}
-          onClickNext={onClickNext}
-          onClickPrevious={onClickPrevious}
-        />
+        {!!wordsList && !!currentCardId && (
+          <Card
+            wordSet={wordsList.byId[wordsList.allIDs[currentCardNumber]]}
+            onClickCheck={onClickCheck}
+            onClickNext={onClickNext}
+            onClickPrevious={onClickPrevious}
+            randomWordsIds={randomWorsdIds}
+            randomWords={randomWords}
+          />
+        )}
       </main>
     </div>
   );
-}
+};
+
+export default Home;
+export const getStaticProps = async () => {
+  const vocabularyData = await fs.readFile('data/vocabulary2.json', 'utf-8');
+  const parsedVocabulary = JSON.parse(vocabularyData);
+  return {
+    props: {
+      vocabulary: parsedVocabulary,
+    },
+  };
+};

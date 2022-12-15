@@ -1,12 +1,10 @@
+import { TWordSet } from 'types';
 export interface ICardProps {
   children?: React.ReactNode;
-  lang1: string;
-  lang2: string;
-  lang3: string;
-  word1: string;
-  word2: string;
-  word3: string;
+  wordSet: TWordSet;
   onClickPrevious: () => void;
   onClickCheck: () => void;
   onClickNext: () => void;
+  randomWordsIds?: string[];
+  randomWords: TWordSet[];
 }

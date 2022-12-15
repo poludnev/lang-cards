@@ -3,7 +3,7 @@
 const fs = require('fs/promises');
 
 const read = () => {
-  fs.readFile('./data/words2.tsv', { encoding: 'utf-8' }).then((data) => {
+  fs.readFile('./data/words3.tsv', { encoding: 'utf-8' }).then((data) => {
     const processedData = data.split('\r\n').map((el) => {
       const words = el.split('\t');
       if (words.length > 3) console.error('alert!');
@@ -26,7 +26,7 @@ const read = () => {
       };
     });
     console.log(processedData2);
-    fs.writeFile('./data/vocabulary2.json', JSON.stringify(processedData2));
+    fs.writeFile('./data/vocabulary3.json', JSON.stringify(processedData2));
   });
 };
 
