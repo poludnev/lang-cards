@@ -3,6 +3,7 @@ import { TVocabulary } from 'types';
 
 export default async function handler(req, res) {
   const dataPath = process.env.WORDLIST_PATH;
+
   if (req.method === 'POST') {
     const data = req.body;
     const sortedIds = data.allIDs.sort((a, b) => a.localeCompare(b));
@@ -13,6 +14,7 @@ export default async function handler(req, res) {
 
   try {
     const words = await fs.readFile(dataPath, 'utf-8');
+    console.log(dataPath, words);
     const parsedWords: TVocabulary = JSON.parse(words);
     res.status(200).json(parsedWords);
   } catch (error) {
