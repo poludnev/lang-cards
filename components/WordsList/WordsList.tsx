@@ -1,15 +1,18 @@
 import { WordsListElement } from './WordsListElement';
 import { IWordsListProps } from './WordsListProps';
 import styles from './WordsList.module.scss';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 export const WordsList: React.FC<IWordsListProps> = ({ wordsList, onEdit }) => {
   return (
     <div className={styles.container}>
       <div className={styles.wordlist}>
         {wordsList && wordsList.allIDs.length > 0 ? (
-          wordsList.allIDs.map((id) => {
+          wordsList.allIDs.map((id, index) => {
             return (
-              <WordsListElement onEdit={onEdit} key={id} words={wordsList.byId[id]} id={id} />
+              <div key={id} style={{ position: 'relative' }}>
+                <div style={{ position: 'absolute', left: '-1%' }}>{index}</div>
+                <WordsListElement onEdit={onEdit} words={wordsList.byId[id]} id={id} />
+              </div>
             );
           })
         ) : (
