@@ -9,7 +9,6 @@ export const SearchFilter: React.FC<ISearchFilterProps> = ({
   filterState,
   setFilterState,
 }) => {
-
   const inputChangeHadnler =
     (type: TLang): React.ChangeEventHandler<HTMLInputElement> =>
     (event) => {
@@ -25,8 +24,8 @@ export const SearchFilter: React.FC<ISearchFilterProps> = ({
         <div className={styles.item__elements}>
           <input
             className={styles.item__input}
-            value={filterState.tur ? filterState.tur : ''}
-            onChange={inputChangeHadnler('tur')}
+            value={filterState.srb ? filterState.srb : ''}
+            onChange={inputChangeHadnler('srb')}
           ></input>
         </div>
 

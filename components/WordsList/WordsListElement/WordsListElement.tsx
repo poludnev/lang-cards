@@ -4,18 +4,18 @@ import styles from './WordsListElement.module.scss';
 import { useEffect, useState } from 'react';
 export const WordsListElement: React.FC<IWordsListElementProps> = ({
   id,
-  words: { tur, eng, rus },
+  words: { srb, eng, rus },
   onEdit,
 }) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [newWords, setNewWords] = useState<{ tur: string; eng: string; rus: string }>({
-    tur,
+  const [newWords, setNewWords] = useState<{ srb: string; eng: string; rus: string }>({
+    srb,
     eng,
     rus,
   });
 
   const confirmEditingHandler = () => {
-    if (newWords.eng === eng && newWords.rus === rus && newWords.tur === tur) {
+    if (newWords.eng === eng && newWords.rus === rus && newWords.srb === srb) {
       setIsEditing(false);
       return;
     }
@@ -44,14 +44,12 @@ export const WordsListElement: React.FC<IWordsListElementProps> = ({
           </button>
         </div>
         <div className={styles.item__elements}>
-          {!isEditing && <div className={styles.item__element}>{tur}</div>}
+          {!isEditing && <div className={styles.item__element}>{srb}</div>}
           {isEditing && (
             <input
               className={styles.item__input}
-              defaultValue={tur}
-              onChange={(event) =>
-                setNewWords((prev) => ({ ...prev, tur: event.target.value }))
-              }
+              defaultValue={srb}
+              onChange={(event) => setNewWords((prev) => ({ ...prev, srb: event.target.value }))}
             ></input>
           )}
         </div>
@@ -62,9 +60,7 @@ export const WordsListElement: React.FC<IWordsListElementProps> = ({
             <input
               className={styles.item__input}
               defaultValue={eng}
-              onChange={(event) =>
-                setNewWords((prev) => ({ ...prev, eng: event.target.value }))
-              }
+              onChange={(event) => setNewWords((prev) => ({ ...prev, eng: event.target.value }))}
             ></input>
           )}
         </div>
@@ -74,9 +70,7 @@ export const WordsListElement: React.FC<IWordsListElementProps> = ({
             <input
               className={styles.item__input}
               defaultValue={rus}
-              onChange={(event) =>
-                setNewWords((prev) => ({ ...prev, rus: event.target.value }))
-              }
+              onChange={(event) => setNewWords((prev) => ({ ...prev, rus: event.target.value }))}
             ></input>
           )}
         </div>

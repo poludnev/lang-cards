@@ -97,7 +97,7 @@ const Home: NextPage<ICardsProps> = () => {
 
       <main className={styles.main}>
         <div className={styles.select}>
-          <button onClick={() => setMainLang('turk')}>TRK</button>
+          <button onClick={() => setMainLang('srb')}>SRB</button>
           <button onClick={() => setMainLang('eng')}>ENG</button>
           <button onClick={() => setMainLang('ru')}>RUS</button>
         </div>

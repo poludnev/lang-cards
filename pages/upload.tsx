@@ -4,8 +4,8 @@ import { api as apiRoute } from 'routes';
 import { TVocabulary } from 'types';
 
 import prodVocabData from 'data/prod/vocabulary.json';
-import testVocabData from 'data/vocabulary.json';
-import { async } from '@firebase/util';
+// import testVocabData from 'data/vocabulary.json';
+// import { async } from '@firebase/util';
 const Upload = () => {
   const [dataBaseName, setDataBaseName] = useState<string>('');
 
