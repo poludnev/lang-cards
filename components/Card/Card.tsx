@@ -13,7 +13,7 @@ export const Card: React.FC<ICardProps> = ({
 }) => {
   const { mainLang } = useMainContext();
 
-  const [isShowWord1, setShowWord1] = useState<boolean>(mainLang === 'turk');
+  const [isShowWord1, setShowWord1] = useState<boolean>(mainLang === 'srb');
   const [isShowWord2, setShowWord2] = useState<boolean>(mainLang === 'eng');
   const [isShowWord3, setShowWord3] = useState<boolean>(mainLang === 'ru');
   const [clickedWordsIds, setClickedWordsIds] = useState<number[]>([]);
@@ -24,7 +24,7 @@ export const Card: React.FC<ICardProps> = ({
 
   const clickPreviousHandler = () => {
     onClickPrevious();
-    setShowWord1(mainLang === 'turk');
+    setShowWord1(mainLang === 'srb');
     setShowWord2(mainLang === 'eng');
     setShowWord3(mainLang === 'ru');
     setClickedWordsIds([]);
@@ -32,7 +32,7 @@ export const Card: React.FC<ICardProps> = ({
   };
   const clickCheckHandler = () => {
     onClickCheck();
-    setShowWord1(mainLang === 'turk');
+    setShowWord1(mainLang === 'srb');
     setShowWord2(mainLang === 'eng');
     setShowWord3(mainLang === 'ru');
     setClickedWordsIds([]);
@@ -40,7 +40,7 @@ export const Card: React.FC<ICardProps> = ({
   };
   const clickNextHandler = () => {
     onClickNext();
-    setShowWord1(mainLang === 'turk');
+    setShowWord1(mainLang === 'srb');
     setShowWord2(mainLang === 'eng');
     setShowWord3(mainLang === 'ru');
     setClickedWordsIds([]);
@@ -52,16 +52,16 @@ export const Card: React.FC<ICardProps> = ({
     () => {
       // console.log('check word', word);
       // console.log(mainLang);
-      // if (mainLang === 'turk') {
+      // if (mainLang === 'srb') {
       // console.log(word === wordSet.tur);
       // }
       setClickedWordsIds((prev) => [...prev, id]);
-      setCorrectWordId((prev) => (word === wordSet.tur ? id : prev));
+      setCorrectWordId((prev) => (word === wordSet.srb ? id : prev));
     };
 
   useEffect(() => {
     console.log('useEffect', mainLang);
-    setShowWord1(mainLang === 'turk');
+    setShowWord1(mainLang === 'srb');
     setShowWord2(mainLang === 'eng');
     setShowWord3(mainLang === 'ru');
     setClickedWordsIds([]);
@@ -78,10 +78,10 @@ export const Card: React.FC<ICardProps> = ({
         <p>Some card description</p>
       </div>
       <div className={styles.cardBody}>
-        <p className={styles.language}>{'Turkçe'}</p>
+        <p className={styles.language}>{'Serbian'}</p>
         <div>
           {isShowWord1 ? (
-            <p className={styles.value}>{wordSet.tur}</p>
+            <p className={styles.value}>{wordSet.srb}</p>
           ) : (
             <p className={styles.hide} onClick={showWordHandler(setShowWord1)}>
               press to show
@@ -115,7 +115,7 @@ export const Card: React.FC<ICardProps> = ({
             className={cn(
               styles.randomwords__langswitch,
               checkWordsLang === 'eng' ? styles.randomwords__langswitch__selected : null,
-              mainLang !== 'turk' ? styles.randomwords__langswitch__disabled : null,
+              mainLang !== 'srb' ? styles.randomwords__langswitch__disabled : null,
             )}
             onClick={() => setCheckWordsLang('eng')}
           >
@@ -125,7 +125,7 @@ export const Card: React.FC<ICardProps> = ({
             className={cn(
               styles.randomwords__langswitch,
               checkWordsLang === 'rus' ? styles.randomwords__langswitch__selected : null,
-              mainLang !== 'turk' ? styles.randomwords__langswitch__disabled : null,
+              mainLang !== 'srb' ? styles.randomwords__langswitch__disabled : null,
             )}
             onClick={() => setCheckWordsLang('rus')}
           >
@@ -133,15 +133,15 @@ export const Card: React.FC<ICardProps> = ({
           </div>
           {randomWords.map((wordSet, index) => (
             <div
-              key={wordSet.tur + index}
-              onClick={checkHandler(index, wordSet.tur)}
+              key={wordSet.srb + index}
+              onClick={checkHandler(index, wordSet.srb)}
               className={cn(
                 styles.randomwords__item,
                 clickedWordsIds.includes(index) ? styles.randomwords__item_clicked : null,
                 corectWordId === index ? styles.randomwords__item_correct : null,
               )}
             >
-              {mainLang === 'turk' ? wordSet[checkWordsLang] : wordSet.tur}
+              {mainLang === 'srb' ? wordSet[checkWordsLang] : wordSet.srb}
             </div>
           ))}
         </div>

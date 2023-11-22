@@ -4,8 +4,7 @@ import fs from 'fs/promises';
 import { Card } from 'components';
 import { useMainContext } from 'contexts';
 import styles from '../styles/Home.module.css';
-
-
+import { getVocabulary } from 'utils/helpers';
 import { TLang, TVocabulary, TWordSet } from 'types';
 import { NextPage } from 'next';
 import { api as apiRoute } from 'routes';
@@ -39,15 +38,25 @@ const Home: NextPage<ICardsProps> = () => {
   };
 
   useEffect(() => {
-    fetch(apiRoute.words())
-      .then((res) => res.json())
-      .then((vocabulary: TVocabulary) => {
+    getVocabulary()
+      .then((vocabulary) => {
+        console.log('vocabulary', vocabulary);
         setWordsList(vocabulary);
       })
       .catch((error) => {
         console.error('Error when fetching words: ' + error);
-        setWordsList(null);
       });
+    //     setWordsList(null);})
+    // fetch(apiRoute.words())
+    //   .then((res) => res.json())
+    //   .then((vocabulary: TVocabulary) => {
+    //     console.log('vocabulary', vocabulary);
+    //     setWordsList(vocabulary);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error when fetching words: ' + error);
+    //     setWordsList(null);
+    //   });
   }, []);
 
   useEffect(() => {
@@ -88,7 +97,7 @@ const Home: NextPage<ICardsProps> = () => {
 
       <main className={styles.main}>
         <div className={styles.select}>
-          <button onClick={() => setMainLang('turk')}>TRK</button>
+          <button onClick={() => setMainLang('srb')}>SRB</button>
           <button onClick={() => setMainLang('eng')}>ENG</button>
           <button onClick={() => setMainLang('ru')}>RUS</button>
         </div>
@@ -108,12 +117,12 @@ const Home: NextPage<ICardsProps> = () => {
 };
 
 export default Home;
-export const getStaticProps = async () => {
-  const vocabularyData = await fs.readFile('data/vocabulary2.json', 'utf-8');
-  const parsedVocabulary = JSON.parse(vocabularyData);
-  return {
-    props: {
-      vocabulary: parsedVocabulary,
-    },
-  };
-};
+// export const getStaticProps = async () => {
+//   const vocabularyData = await fs.readFile('data/vocabulary2.json', 'utf-8');
+//   const parsedVocabulary = JSON.parse(vocabularyData);
+//   return {
+//     props: {
+//       vocabulary: parsedVocabulary,
+//     },
+//   };
+// };

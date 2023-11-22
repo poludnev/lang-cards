@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
-import { addDocumentById, getAllDocuments } from 'utils/firebase';
+import { addDocumentById, getAllDocuments, getDocument } from 'utils/firebase';
 import { api as apiRoute } from 'routes';
 import { TVocabulary } from 'types';
+
+import prodVocabData from 'data/prod/vocabulary.json';
+// import testVocabData from 'data/vocabulary.json';
+// import { async } from '@firebase/util';
 const Upload = () => {
   const [dataBaseName, setDataBaseName] = useState<string>('');
 
   const timeStamp = Date.now();
 
   const uploader = async () => {
-    
     fetch(apiRoute.words())
       .then((res) => res.json())
       .then((data: TVocabulary) => {
@@ -38,11 +41,22 @@ const Upload = () => {
       .then(console.log);
   };
 
+  const test1 = async () => {
+    addDocumentById('prodCollection', 'prodVocabulary', prodVocabData);
+  };
+
+  const test2 = async () => {
+    const data = await getDocument('testCollection', 'vocab1');
+    console.log(data);
+  };
+
   return (
     <div>
       <button onClick={uploader}>Upload data to db</button>
       <input onChange={(event) => setDataBaseName(event.target.value)} value={dataBaseName} />
       <button onClick={downloader}>Download data</button>
+      <button onClick={test1}>Test</button>
+      <button onClick={test2}>Test2</button>
     </div>
   );
 };

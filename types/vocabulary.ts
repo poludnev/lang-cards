@@ -1,4 +1,4 @@
-export type TLang = 'tur' | 'eng' | 'rus';
+export type TLang = 'srb' | 'eng' | 'rus';
 
 export type TWordSet = {
   [key in TLang]: string;
