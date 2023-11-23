@@ -1,11 +1,11 @@
 import fs from 'fs/promises';
 import { Button, SearchFilter, WordsList } from 'components';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import styles from 'styles/Addword.module.scss';
 
 import { api as apiRoute } from 'routes';
 import { getVocabulary, updateVocabulary } from 'utils/helpers';
-import { TFilterState, TVocabulary, TVocabularyById } from 'types';
+import { TFilterState, TLang, TVocabulary, TVocabularyById } from 'types';
 import { NextPage } from 'next';
 
 interface IVocabularyListPageProps {
@@ -19,6 +19,13 @@ const VocabularyListPage: NextPage<IVocabularyListPageProps> = ({ vocabulary }) 
 
   const initialFilterState: TFilterState = { srb: null, eng: null, rus: null };
   const [filterState, setFilterState] = useState<TFilterState>(initialFilterState);
+
+  const srbInputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const name = event.target.name as TLang;
+    console.log(name);
+    setFilterState((prev) => ({ ...prev, [name]: value }));
+  };
 
   const submitFormHandler: React.FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
@@ -145,19 +152,34 @@ const VocabularyListPage: NextPage<IVocabularyListPageProps> = ({ vocabulary }) 
             <label htmlFor="" className={styles.form__label}>
               Serbian
             </label>
-            <input name="srb" type="text" className={styles.form__input} />
+            <input
+              name="srb"
+              type="text"
+              className={styles.form__input}
+              onChange={srbInputChangeHandler}
+            />
           </div>
           <div className={styles.form__input_group}>
             <label htmlFor="" className={styles.form__label}>
               English
             </label>
-            <input name="eng" type="text" className={styles.form__input} />
+            <input
+              name="eng"
+              type="text"
+              className={styles.form__input}
+              onChange={srbInputChangeHandler}
+            />
           </div>
           <div className={styles.form__input_group}>
             <label htmlFor="" className={styles.form__label}>
               Russian
             </label>
-            <input name="rus" type="text" className={styles.form__input} />
+            <input
+              name="rus"
+              type="text"
+              className={styles.form__input}
+              onChange={srbInputChangeHandler}
+            />
           </div>
           <div className={styles.form__controls}>
             <Button type="submit">Submit</Button>
