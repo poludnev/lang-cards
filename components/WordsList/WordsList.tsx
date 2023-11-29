@@ -10,7 +10,7 @@ export const WordsList: React.FC<IWordsListProps> = ({ wordsList, onEdit }) => {
           wordsList.allIDs.map((id, index) => {
             return (
               <div key={id} style={{ position: 'relative' }}>
-                <div style={{ position: 'absolute', left: '-1%' }}>{index}</div>
+                <div style={{ position: 'absolute', left: '-4rem' }}>{index}</div>
                 <WordsListElement onEdit={onEdit} words={wordsList.byId[id]} id={id} />
               </div>
             );
