@@ -20,6 +20,8 @@ export const Card: React.FC<ICardProps> = ({
   const [corectWordId, setCorrectWordId] = useState<number | null>(null);
   const [checkWordsLang, setCheckWordsLang] = useState<TLang>('eng');
 
+  const [showRandom, setShowRandom] = useState(false);
+
   const showWordHandler = (setShow: Dispatch<SetStateAction<boolean>>) => () => setShow(true);
 
   const clickPreviousHandler = () => {
@@ -109,7 +111,10 @@ export const Card: React.FC<ICardProps> = ({
           )}
         </div>
       </div>
-      {randomWords.length > 0 && wordSet && (
+      <div style={{ padding: '1rem', textAlign: 'center' }}>
+        <button onClick={() => setShowRandom((prev) => !prev)}>show random</button>
+      </div>
+      {showRandom && randomWords.length > 0 && wordSet && (
         <div className={styles.randomwords}>
           <div
             className={cn(

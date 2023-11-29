@@ -18,7 +18,7 @@
     border-radius: 1rem;
 
     padding: 1rem 2rem;
-    width: 30%;
+    // width: 30%;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 700;
@@ -35,7 +35,7 @@
     padding: 1rem;
     border-bottom: 1px solid rgba(52, 58, 64, 0.2);
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: max-content 1fr;
 
     .language,
     .value,
@@ -48,25 +48,27 @@
       // padding: 1.2rem;
       // line-height: 3.2rem;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
     }
 
     .value {
       font-size: 2rem;
-      padding-left: 3rem;
+      padding-left: 1rem;
       line-height: 3.2rem;
+      text-align: center;
       // display: flex;
       // justify-content: center;
       // align-items: center;
     }
     .hide {
-      padding-left: 3rem;
+      padding-left: 1rem;
       // display: flex;
       // justify-content: center;
       font-size: 2.4rem;
       line-height: 3.2rem;
       color: #74c0fc;
       cursor: pointer;
+      text-align: center;
     }
   }
 
