@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import { Button, SearchFilter, WordsList } from 'components';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import styles from 'styles/Addword.module.scss';
 
 import { api as apiRoute } from 'routes';
@@ -19,6 +19,8 @@ const VocabularyListPage: NextPage<IVocabularyListPageProps> = ({ vocabulary }) 
 
   const initialFilterState: TFilterState = { srb: null, eng: null, rus: null };
   const [filterState, setFilterState] = useState<TFilterState>(initialFilterState);
+
+  const mainLangInputRef = useRef<HTMLInputElement>(null);
 
   const srbInputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -62,6 +64,7 @@ const VocabularyListPage: NextPage<IVocabularyListPageProps> = ({ vocabulary }) 
         rus.value = '';
         srb.value = '';
         eng.value = '';
+        if (mainLangInputRef) mainLangInputRef.current.focus();
       })
       .catch((error) => {
         console.error('Handling form submit error: ' + JSON.stringify(error));
@@ -153,6 +156,7 @@ const VocabularyListPage: NextPage<IVocabularyListPageProps> = ({ vocabulary }) 
               Serbian
             </label>
             <input
+              ref={mainLangInputRef}
               name="srb"
               type="text"
               className={styles.form__input}
